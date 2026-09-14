@@ -1,0 +1,5 @@
+venv/
+intel_dataset/
+__pycache__/
+*.pyc
+best_mobilenetv2.pth
