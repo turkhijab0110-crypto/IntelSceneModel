@@ -136,7 +136,7 @@ model = models.mobilenet_v2(weights=weights)
 # 7. FREEZE PRETRAINED LAYERS
 # ============================================================
 
-# We don't want to retrain the existing MobileNetV2 features.
+
 for parameter in model.features.parameters():
     parameter.requires_grad = False
 
@@ -144,9 +144,6 @@ for parameter in model.features.parameters():
 # ============================================================
 # 8. REPLACE THE CLASSIFIER
 # ============================================================
-
-# MobileNetV2 originally has 1000 ImageNet classes.
-# Our dataset has only 6 classes.
 
 number_of_features = model.classifier[1].in_features
 
